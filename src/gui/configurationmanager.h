@@ -25,6 +25,7 @@ namespace Encryption {
 
 class AppConfig;
 class ConfigTabAppearance;
+class ConfigTabBackup;
 class ConfigTabTabs;
 class ItemFactory;
 class ItemOrderList;
@@ -127,6 +128,7 @@ private:
     ClipboardBrowserSharedPtr m_sharedData;
 
     ConfigTabAppearance *m_tabAppearance = nullptr;
+    ConfigTabBackup *m_tabBackup = nullptr;
     ConfigTabTabs *m_tabTabs = nullptr;
     ItemOrderList *m_tabItems = nullptr;
     ShortcutsWidget *m_tabShortcuts = nullptr;

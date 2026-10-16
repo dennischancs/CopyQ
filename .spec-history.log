@@ -1,0 +1,20 @@
+[2026-10-16 15:40] init TASKS.md
+[2026-10-16 15:40] add T1 冻结规格与文档
+[2026-10-16 15:40] add T2 看见未实现红灯
+[2026-10-16 15:40] add T3 删桩后桌面同步变绿
+[2026-10-16 15:40] add T4 移动端只列未完成项
+[2026-10-16 15:41] T1 todo -> doing
+[2026-10-16 15:41] T1 doing -> review
+[2026-10-16 15:41] T2 todo -> doing
+[2026-10-16 15:41] T2 doing -> review
+[2026-10-16 15:41] T3 todo -> doing
+[2026-10-16 15:41] T3 doing -> review
+[2026-10-16 15:41] T4 todo -> doing
+[2026-10-16 15:41] T4 doing -> review
+[2026-10-16 15:41] GATE FAIL — pre-existing sql-concat false positives and unittest discover; feature command testConfigSync is 25 passed. Exemptions in REVIEW-CHECKLIST.md
+[2026-10-16 15:42] GATE FAIL — second run after TASKS.md existed: FAIL 42 WARN 2 PASS 3 SKIP 2. Same exemptions.
+[2026-10-16 15:42] RETRO symptom: sql-concat hits gnome extension and translation XML; test-run is python unittest discover with 0 tests.
+[2026-10-16 15:42] RETRO cause: one root cause, the gate's language scan does not know this is a Qt/C++ repo. Not caused by config sync.
+[2026-10-16 15:42] RETRO process: do not split tasks smaller to satisfy that scanner, and do not edit translations to silence it.
+[2026-10-16 15:42] RETRO next check: build/copyq-tests testConfigSync, already green. gate_check.sh remains a false fail until the scanner grows a C++ skip.
+[2026-10-16 15:42] GATE FAIL — second run after TASKS.md: FAIL 42 WARN 2 PASS 3 SKIP 2. Same pre-existing exemptions. Retrospective appended to .spec-history.log

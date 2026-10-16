@@ -19,6 +19,7 @@
 #include "common/settings.h"
 #include "gui/clipboardbrowsershared.h"
 #include "gui/configtabappearance.h"
+#include "gui/configtabbackup.h"
 #include "gui/configtabtabs.h"
 #include "gui/encryptionpassword.h"
 #include "gui/iconfactory.h"
@@ -168,6 +169,7 @@ void ConfigurationManager::initTabIcons()
     list->appendItem( tr("Items"), getIcon("", IconList), makeTab(&m_tabItems, this) );
     list->appendItem( tr("Shortcuts"), getIcon("", IconKeyboard), makeTab(&m_tabShortcuts, this) );
     list->appendItem( tr("Appearance"), getIcon("", IconImage), makeTab(&m_tabAppearance, this) );
+    list->appendItem( tr("Backup"), getIcon("", IconCloud), makeTab(&m_tabBackup, this) );
 }
 
 void ConfigurationManager::initPluginWidgets(ItemFactory *itemFactory)
@@ -551,6 +553,11 @@ void ConfigurationManager::connectSlots()
             this, &ConfigurationManager::onSpinBoxTrayItemsValueChanged);
     connect(m_tabGeneral->pushButtonChangeEncryptionPassword, &QPushButton::clicked,
             this, &ConfigurationManager::onPushButtonChangeEncryptionPasswordClicked);
+    connect(m_tabBackup, &ConfigTabBackup::syncRequested, this, [this] {
+        AppConfig appConfig;
+        apply(&appConfig);
+        emit configurationChanged(&appConfig);
+    });
 }
 
 void ConfigurationManager::apply(AppConfig *appConfig)

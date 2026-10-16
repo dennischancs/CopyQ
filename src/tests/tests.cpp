@@ -10,6 +10,7 @@
 #include "itempinnedtests.h"
 #include "itemsynctests.h"
 #include "itemtagstests.h"
+#include "configsynctests.h"
 #include "tests_clipboarddataguard.h"
 
 #include "app/app.h"
@@ -850,6 +851,7 @@ private:
     IMPL_TEST_GROUP(ItemPinned)
     IMPL_TEST_GROUP(ItemSync)
     IMPL_TEST_GROUP(ItemTags)
+    IMPL_TEST_GROUP(ConfigSync)
 };
 
 int main(int argc, char **argv)
