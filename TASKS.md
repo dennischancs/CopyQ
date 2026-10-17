@@ -22,7 +22,7 @@ any -> dropped
 | T1 | 冻结规格与文档 | SPEC.md 含 R1-R15 与红绿记录；prd 与 dev-plan 只引用不另写句子 | verified | - | 2026-10-16 发布前复核 |
 | T2 | 看见未实现红灯 | COPYQ_CONFIG_SYNC_STUB=1 时 testConfigSync 因 NOT_IMPLEMENTED 失败，而不是编译或端口绑定失败 | verified | T1 | 红灯记录在 SPEC 第 5 节，桩已删除，不能重放 |
 | T3 | 删桩后桌面同步变绿 | 变量仍为 1 时 build/copyq-tests testConfigSync 退出码 0 | verified | T2 | 2026-10-16 复跑 25 passed，退出码 0 |
-| T4 | 移动端只列未完成项 | todo.md 列出 Android 与 iOS 不能全量移植的功能，且仓库没有移动端工程 | review | T1 | 清单已写。不标 verified，避免被读成移动端已移植 |
+| T4 | 移动端只列未完成项 | todo.md 指向 `mobile/`，且仓库没有移动端工程 | review | T1 | 计划写在 `mobile/TASKS.md`。这里仍不标 verified |
 
 ## 原子性自查
 

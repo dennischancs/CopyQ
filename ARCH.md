@@ -61,7 +61,7 @@ docs/schemas/copyq-config-manifest.schema.json
 | Backup 页 | 打包格式 | 否，只通过 `ConfigSync` | 否。界面文案和 zip 布局会分开变 |
 | WebDAV | zip | 否 | 否。服务器和包格式分开变 |
 | 上限常量 | 调用点 | 调用点读 `ConfigArchive` 常量 | 是。上限只许改一处 |
-| 移动端 | 以上模块 | 现在不存在这条边 | 移动端是另一个产品形态，见 `todo.md` |
+| 移动端 | 以上模块 | 现在不存在这条边 | 移动端是另一个产品形态。技术约束见 `mobile/ARCH.md`，不要在这里加一条依赖 |
 
 ## 5. 禁止
 
@@ -69,4 +69,4 @@ docs/schemas/copyq-config-manifest.schema.json
 - 不要在日志、`Result.detail`、对话框里放密码。
 - 不要跟随重定向，不要加「忽略证书」开关。
 - 不要为了过 Gate 去改 `shared/gnome-extension` 或 `translations/*.ts`。那些 sql-concat 命中是既有误报。
-- 不要新建 Android 或 iOS 工程来制造「已经移植」的外观。
+- 不要新建 Android 或 iOS 工程来制造「已经移植」的外观。手机工程只按 `mobile/dev-plan.md` 的 T4、T6 出现，空目标不算。

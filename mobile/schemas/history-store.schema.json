@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://copyq.local/mobile/schemas/history-store.schema.json",
+  "title": "CopyQ mobile local history",
+  "description": "Local text history on the phone. This file is not the WebDAV configuration manifest. Extra keys are invalid. The store must live in the history directory excluded from configuration archives.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["tabs"],
+  "properties": {
+    "tabs": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/tab" }
+    }
+  },
+  "$defs": {
+    "tab": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "items"],
+      "properties": {
+        "name": { "type": "string", "minLength": 1, "maxLength": 240 },
+        "items": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/item" }
+        }
+      }
+    },
+    "item": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "text"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1, "maxLength": 80 },
+        "text": { "type": "string" }
+      }
+    }
+  }
+}

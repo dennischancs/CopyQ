@@ -44,7 +44,7 @@
 | B4 | 不打包设置目录以外的 GnuPG 钥匙圈 | 钥匙不在设置目录里 |
 | B5 | 不关闭 TLS 校验，不跟随 HTTP 重定向 | 避免把口令送到另一个主机 |
 | B6 | 不新增压缩库；zip 只用 STORE | 仓库不增加依赖 |
-| B7 | 本交付不实现 Android 或 iOS 工程 | 见 `todo.md`。不能移植的原因写在那里，不假装有移动端 |
+| B7 | 本交付不实现 Android 或 iOS 工程 | 桌面配置同步这一交付仍不包含移动工程。手机端见 `mobile/SPEC.md`，不改写本文件的 R1–R15 |
 | B8 | 删除远程备份不做确认 | 有意对齐 Karing，不是遗漏 |
 
 ### 一致性
@@ -232,3 +232,4 @@ EXIT:0
 ## 6. 个人项目的降级
 
 没有第二个人独立写测试。测试和实现都在同一次会话里。机械证据只有：红灯日志、绿灯日志，以及 `gate_check.sh`。Gate 不编译 C++，也不跑 `copyq-tests`。见 `REVIEW-CHECKLIST.md`。
+ests`。见 `REVIEW-CHECKLIST.md`。
